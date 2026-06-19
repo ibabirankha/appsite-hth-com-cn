@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ibabirankha.github.io/appsite-hth-com-cn/sitemap.xml
