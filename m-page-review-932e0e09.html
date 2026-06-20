@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常记录 · leyu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: #f8f7f5;
+            color: #2b2b2b;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: #1f2a37;
+            background-image: radial-gradient(circle at 20% 30%, #2d3e52 0%, #141c26 100%);
+            color: #eaeaea;
+            padding: 5rem 1.5rem 3.8rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+            color: #f0ede8;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #bab6ae;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 4rem;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.8rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #a54232;
+            text-decoration: none;
+            transition: border-bottom 0.15s;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #a54232;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.6rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid #b56b5c;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #2f2b28;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4b4742;
+        }
+
+        .scene-note {
+            background: #f2efe9;
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .scene-note blockquote {
+            flex: 1 1 200px;
+            font-size: 1rem;
+            color: #3d3933;
+            border-left: 3px solid #b56b5c;
+            padding-left: 1.2rem;
+            font-style: normal;
+            margin: 0;
+        }
+
+        .scene-note blockquote p {
+            margin-bottom: 0.3rem;
+        }
+
+        .scene-note .note-detail {
+            flex: 2 1 280px;
+        }
+
+        .scene-note .note-detail p {
+            margin-bottom: 0.8rem;
+            color: #3f3b36;
+        }
+
+        .faq-mini {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0 1.2rem;
+            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .faq-mini details {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e9e4de;
+            padding-bottom: 1rem;
+        }
+
+        .faq-mini details:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #2f2b28;
+            padding: 0.2rem 0;
+            font-size: 1rem;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.6rem;
+            color: #5b5650;
+            font-size: 0.95rem;
+            padding-left: 0.2rem;
+        }
+
+        .closing {
+            text-align: center;
+            color: #5c5751;
+            background: white;
+            border-radius: 24px;
+            padding: 2.2rem 2.5rem;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+            margin-top: 2.2rem;
+        }
+
+        .closing p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 2rem 1.5rem 2.5rem;
+            font-size: 0.9rem;
+            color: #8c867f;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .intro-card {
+                padding: 1.8rem 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .scene-note {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .faq-mini {
+                padding: 1.5rem;
+            }
+
+            .closing {
+                padding: 1.8rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>随手翻 · 对照记</h1>
+        <div class="tagline">安静地阅读、核对、延伸 —— 关于日常信息的一角</div>
+    </div>
+
+    <div class="container">
+        <div class="intro-card">
+            <p>
+                有些页面适合反复打开，不是为了追更或促销，而是因为那里存着熟悉的目录、稳定的结构，以及一种可以随时对照的踏实感。
+            </p>
+            <p>
+                我习惯把 <a href="https://m-page-leyu.com">leyu</a> 放在浏览器书签的常用栏，工作间隙做资料比对、查证某个词条的上下文，或是单纯想顺着一条线索往下翻几页。那种不被打断的线性阅读，比无数弹窗和推送更让人专注。
+            </p>
+            <p>
+                后来发现，周围不少朋友也有类似的习惯。他们不一定每天访问，但每当需要核对一个细节、梳理一段知识脉络时，总会回到同一个起点。那个起点就像是信息海洋里的锚点，安静、稳定，不喧哗。
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>条目式陈列</h3>
+                <p>内容以清晰的分组和标题呈现，便于快速定位需要对照的段落。没有多余动效干扰视线。</p>
+            </div>
+            <div class="feature-item">
+                <h3>适合延伸阅读</h3>
+                <p>页面内关联链接排列自然，从一条注释可以平滑过渡到另一篇相关内容，无需反复返回。</p>
+            </div>
+            <div class="feature-item">
+                <h3>稳定的格式</h3>
+                <p>长期保持统一的排版风格，让你养成固定的阅读节奏。即使隔几周回来，也不会感到陌生。</p>
+            </div>
+            <div class="feature-item">
+                <h3>轻量响应</h3>
+                <p>无论在笔记本还是手机浏览器上，文本与间距都会自适应，阅读体验始终舒适。</p>
+            </div>
+        </div>
+
+        <div class="scene-note">
+            <blockquote>
+                <p>“有时只是想确认一个日期、一个术语的出处。”</p>
+                <p>—— 一位常用对照阅读的朋友</p>
+            </blockquote>
+            <div class="note-detail">
+                <p>场景往往是这样的：写材料写到一半，想起某个说法好像见过两种表述，于是打开熟悉的页面，用关键词扫一遍。不需要多复杂的搜索技巧，靠肌肉记忆就能找到对应的位置。</p>
+                <p>如果发现新的关联内容，就顺着链接再读两三段，然后心满意足地切回文档。整个过程安静、高效，没有多余的信息噪音。</p>
+            </div>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>这个页面适合什么样的查询习惯？</summary>
+                <p>适合那种带着具体问题来、希望快速定位到相关段落的阅读方式。页面结构长期稳定，没有频繁改版导致的迷路感。</p>
+            </details>
+            <details>
+                <summary>内容更新频繁吗？</summary>
+                <p>保持适度更新，但更注重内容的延续性。新增条目通常放在已有分类之下，不会打乱原有的索引逻辑。</p>
+            </details>
+            <details>
+                <summary>移动端浏览体验如何？</summary>
+                <p>做了基本的响应式适配，文本字号和行距在手机上依然舒适。表格和代码块也会自动横向滚动，不会溢出屏幕。</p>
+            </details>
+        </div>
+
+        <div class="closing">
+            <p>
+                一个安静的角落，足够存放那些需要反复查阅、对照、延伸的碎片。不必每次重新寻找，不必担心链接失效。<br>
+                如果你也有类似的习惯，或许可以把它也收进书签栏。
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span>日常对照 · </span>
+        <a href="https://m-page-leyu.com">leyu</a>
+        <span> · 内容仅供个人参考</span>
+    </div>
+</body>
+</html>
