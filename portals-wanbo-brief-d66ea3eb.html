@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万博体育 · 用户引导介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ed; /* 米白基调 */
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', 'SimSun', serif;
+            line-height: 1.8;
+            color: #3a3530;
+            padding: 3rem 1.5rem;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            background-color: #fcf9f5;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        /* 文章头部 */
+        .post-header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #e9dfd2;
+            padding-bottom: 1.8rem;
+        }
+
+        .post-header h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3b2f26;
+            margin-bottom: 0.6rem;
+        }
+
+        .post-header .meta-line {
+            font-size: 0.9rem;
+            color: #8e8176;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .post-header .meta-line span {
+            margin-right: 1.2rem;
+        }
+
+        /* 导语 */
+        .lead {
+            font-size: 1.2rem;
+            background: #f1ece4;
+            padding: 1.2rem 1.6rem;
+            border-radius: 12px;
+            margin: 1.8rem 0 2.2rem 0;
+            color: #3f3730;
+            border-left: 4px solid #c7b5a2;
+        }
+
+        /* 正文段落 */
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        p strong {
+            color: #4f3f33;
+            font-weight: 600;
+        }
+
+        /* 引用块 / 提示框 */
+        .insight-box {
+            background: #f4eee6;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0;
+            border-radius: 16px;
+            border: 1px solid #e0d5c7;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            font-style: normal;
+        }
+
+        .insight-box .quote-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #8f7b68;
+            border-bottom: 1px dashed #dacfc1;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .insight-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 内联链接 */
+        a {
+            color: #7e6b58;
+            text-decoration: none;
+            border-bottom: 1px dotted #bfaea0;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #4d3d30;
+            border-bottom: 1px solid #7e6b58;
+        }
+
+        /* 特色列表 —— 用温和的点缀 */
+        .feature-note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin: 2rem 0 1.2rem 0;
+            background: #f3ede5;
+            padding: 1.2rem 1.8rem;
+            border-radius: 18px;
+        }
+
+        .feature-note .item {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            font-size: 0.98rem;
+            color: #4d4239;
+        }
+
+        .feature-note .item .icon-bull {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #b8a38e;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .feature-note .item span:first-child {
+            font-weight: 400;
+        }
+
+        /* FAQ 摘要 —— 简约问答 */
+        .faq-mini {
+            margin: 2.2rem 0 1.2rem;
+            border-top: 1px solid #e1d5c7;
+            padding-top: 2rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #4d3d30;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .qa-pair {
+            margin-bottom: 1.2rem;
+        }
+
+        .qa-pair .q {
+            font-weight: 500;
+            color: #5a4a3b;
+        }
+
+        .qa-pair .q::before {
+            content: "Q · ";
+            color: #b09a86;
+            font-weight: 400;
+        }
+
+        .qa-pair .a {
+            padding-left: 1.8rem;
+            color: #4f443b;
+            margin-top: 4px;
+        }
+
+        .qa-pair .a::before {
+            content: "— ";
+            color: #b8a28c;
+        }
+
+        /* 访问句 —— 自然收尾 */
+        .closing-note {
+            margin-top: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #e7ddd0;
+            font-size: 1rem;
+            color: #5b4e41;
+            text-align: center;
+        }
+
+        .closing-note a {
+            font-weight: 400;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 0.8rem;
+            }
+            .page-wrap {
+                padding: 1.8rem 1.2rem;
+            }
+            .post-header h1 {
+                font-size: 1.6rem;
+            }
+            .lead {
+                font-size: 1rem;
+                padding: 0.9rem 1.2rem;
+            }
+            .feature-note {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .qa-pair .a {
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+    <!-- 文章头部 -->
+    <header class="post-header">
+        <h1>当你想快速了解一个网站：万博体育</h1>
+        <div class="meta-line">
+            <span>阅读时间约 4 分钟</span>
+            <span>· 用户视角</span>
+        </div>
+    </header>
+
+    <!-- 导语 -->
+    <div class="lead">
+        初次打开一个陌生的体育站点，大多数人最关心两件事：<strong>它提供什么，以及是否可靠。</strong> 下面从用户角度，简要梳理 <a href="https://portals-wanbo.com">万博体育</a> 的核心轮廓，帮助你判断它是否符合你的需要。
+    </div>
+
+    <!-- 正文段落 -->
+    <p>
+        很多人寻找体育资讯或赛事相关服务时，往往会被大量信息淹没。与其花时间四处试错，不如先看一个站点的结构是否清晰。从首页布局来看，<strong>万博体育</strong> 将主要板块分成了赛事动态、数据参考、内容聚合等几个方向，没有复杂的跳转迷宫，进入后可以较快找到自己感兴趣的区域。
+    </p>
+    <p>
+        就内容本身而言，它覆盖的体育种类比较多样，从主流足球、篮球，到一些细分项目都有涉及。这种广度对只想泛泛了解的用户比较友好。同时站点内也保留了较为细致的分类标签，无论你只是想随便浏览，还是带着明确目标查找，都能找到对应的入口。
+    </p>
+
+    <!-- 引用提示块（风格提示） -->
+    <div class="insight-box">
+        <div class="quote-label">✎ 用户提示</div>
+        <p>网站内容由运营方持续更新，具体时效性以实际页面为准。建议第一次访问时先查看“最新动态”或“热门内容”板块，能更快感知更新节奏和风格。</p>
+    </div>
+
+    <p>
+        有一点值得留意：<strong>万博体育</strong> 的界面语言偏向中性，没有过分渲染或使用夸张标语。如果你反感“全网第一”“唯一指定”这类表达，这里可能让你看得更舒服。整个站点的信息呈现以简洁为主，没有满屏弹窗或诱导性按钮，浏览体验相对干净。
+    </p>
+
+    <!-- 特点小卡片（温和罗列） -->
+    <div class="feature-note">
+        <div class="item"><span class="icon-bull"></span> 项目覆盖：足球、篮球、网球、电竞等</div>
+        <div class="item"><span class="icon-bull"></span> 导航结构：分类 + 最新内容双线并行</div>
+        <div class="item"><span class="icon-bull"></span> 内容风格：偏重信息整理，非营销口吻</div>
+        <div class="item"><span class="icon-bull"></span> 更新频率：每日有内容刷新</div>
+    </div>
+
+    <p>
+        另外，网站没有强制注册才能浏览全部内容，大部分信息对访客开放。如果你只是想查一查某场比赛的资讯或数据，直接访问即可，不用先填表或验证。这一点对于想要快速确认网站用途的人来说，减少了不必要的负担。
+    </p>
+
+    <!-- FAQ 摘要 (2-3 个自然问题) -->
+    <div class="faq-mini">
+        <h3>一些你可能关心的问题</h3>
+
+        <div class="qa-pair">
+            <div class="q">万博体育适合哪类用户？</div>
+            <div class="a">对体育赛事有日常关注需求、不想被过度营销干扰的用户。无论是资深爱好者还是轻度围观者，都能找到对应的内容模块。</div>
+        </div>
+
+        <div class="qa-pair">
+            <div class="q">需要下载 App 或注册吗？</div>
+            <div class="a">直接在浏览器中打开即可浏览绝大部分内容。注册功能由用户自行选择，不做强制。移动端适配也较自然。</div>
+        </div>
+
+        <div class="qa-pair">
+            <div class="q">信息更新是否及时？</div>
+            <div class="a">根据观察，热门赛事期间更新比较快，常规时段保持每日刷新。建议以站内实际标注时间为准。</div>
+        </div>
+    </div>
+
+    <!-- 访问句 (自然收尾, 链接已嵌入) -->
+    <div class="closing-note">
+        如果你想亲自感受一下它的调性，可以直接前往 <a href="https://portals-wanbo.com">万博体育</a> 浏览当前内容。先看三五篇资讯或数据页，通常就能判断它是否符合你的习惯。
+    </div>
+
+</div>
+
+</body>
+</html>
