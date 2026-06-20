@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyu · 一处安静的网页角落</title>
+  <style>
+    /* 极简底色，留白呼吸感 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fcfcf8;
+      color: #1d1c1a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* 标题层级 —— 干净、有厚度 */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: #5b5a57;
+      margin-bottom: 2.2rem;
+      max-width: 540px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 380;
+      letter-spacing: -0.01em;
+      margin: 3rem 0 1rem 0;
+      color: #1f1e1b;
+      border-bottom: 1px solid #e8e6e0;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: 1.6rem 0 0.5rem 0;
+      color: #2b2a27;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+      color: #2e2c28;
+    }
+
+    a {
+      color: #1f3a3f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      color: #000;
+      text-decoration-color: #9b9b94;
+    }
+
+    /* 强调链接融入句子 */
+    .inline-link {
+      font-weight: 430;
+      text-decoration-color: #b5b1a6;
+    }
+
+    /* 卡片式优势区，轻质感 */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem 1.2rem;
+      margin: 2.2rem 0 1.8rem 0;
+    }
+
+    .benefit-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #eeede9;
+    }
+
+    .benefit-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      color: #2d2b27;
+    }
+
+    .benefit-item .label {
+      font-size: 1.05rem;
+      font-weight: 420;
+      letter-spacing: 0.01em;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #161514;
+    }
+
+    /* 说明区 —— 克制叙述 */
+    .note-block {
+      background: #f6f5f0;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.5rem 0 2rem;
+      border: 1px solid #e6e4dc;
+    }
+
+    .note-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-summary {
+      margin: 2.8rem 0 2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e6e3db;
+      padding: 1.1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 440;
+      margin-bottom: 0.3rem;
+      color: #1d1a16;
+      font-size: 1rem;
+    }
+
+    .faq-answer {
+      color: #4b4944;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* 底部链接区，干净无修饰 */
+    .footer-links {
+      margin-top: 4rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e1dfd7;
+      font-size: 0.9rem;
+      color: #5f5d56;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 1.8rem;
+    }
+
+    .footer-links span {
+      color: #807d74;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eae7df;
+      margin: 2.5rem 0 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .page {
+        padding: 2rem 1.2rem 3rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .note-block {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero 区 -->
+    <h1>leyu · 从一处角落开始</h1>
+    <div class="hero-sub">
+      一个关于清晰、安静与连贯体验的叙述。不是所有页面都需要喧嚣，leyu 更倾向用克制的结构承载内容。
+    </div>
+
+    <!-- 特点 / 优势区 用卡片表达 -->
+    <h2>几个自然的理由</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <span class="label">结构优先</span>
+        <p>标题、段落、留白——每一层都有存在的理由。不堆砌，不冗余，阅读节奏由内容自己决定。</p>
+      </div>
+      <div class="benefit-item">
+        <span class="label">克制的美学</span>
+        <p>低对比底色、窄栏、轻量阴影。视觉让位于文字，界面退后半步，信息自然浮现。</p>
+      </div>
+      <div class="benefit-item">
+        <span class="label">跨屏的连贯</span>
+        <p>从手机到桌面，网格与间距自动适配。不需要特意缩放，每一段都保持呼吸感。</p>
+      </div>
+      <div class="benefit-item">
+        <span class="label">叙述的语气</span>
+        <p>不承诺奇迹，不制造焦虑。用平实的句子解释功能、场景与边界，像一次坦诚的对话。</p>
+      </div>
+    </div>
+
+    <!-- 说明区 —— 从关键词背后的主题展开 -->
+    <h2>leyu 背后的主题</h2>
+    <p>
+      关键词从来不只是标签。当提到 <strong>leyu</strong>，它指向一种对网页底色的思考：<br>
+      一个页面应该怎样被阅读？答案或许不在于添加更多元素，而在于筛选、排序、然后沉默地呈现。
+    </p>
+    <p>
+      这里的每个区块都经过审视——hero 不需要大图，优势不需要图标，FAQ 不需要折叠动画。信任建立在内容的真实排列上，而不是特效的堆叠。这是一种安静的主张。
+    </p>
+    <div class="note-block">
+      <p>
+        你可以把 <a href="https://main-site-leyu.com" class="inline-link">leyu</a> 看作一个出发点。它提供一种基准：干净的排版、克制的对比、不过度承诺的文案。从这里开始构建任何面向内容的页面，都会自带一种沉稳的基调。
+      </p>
+      <p>
+        对于希望页面回归阅读本质的人来说，leyu 是一个低干预的框架。不定义你的内容，只是为内容提供一个恰当的容器。
+      </p>
+    </div>
+
+    <!-- 常见思考 / FAQ 摘要 -->
+    <h2>一些人们常问的事</h2>
+    <div class="faq-summary">
+      <div class="faq-item">
+        <div class="faq-question">leyu 适合什么样的网站？</div>
+        <div class="faq-answer">个人页面、文档、小型项目介绍、轻量品牌站——任何需要以文字为主要表达方式的地方。如果页面需要大量图片或复杂交互，leyu 也可以作为基础层，再灵活叠加。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">会不会缺少常见的组件？</div>
+        <div class="faq-answer">有意保持精简。导航、按钮、卡片、表单等要素都可用简单 HTML 与少量 CSS 扩展。leyu 提供视觉基调，而不是组件库。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">配色和字体可以自定义吗？</div>
+        <div class="faq-answer">当然。style 区域中的变量与选择器都采用极简方式，替换颜色值、字族或间距即可重塑气质。leyu 不锁定任何样式。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">与 leyu 主题相关的内容源在哪里？</div>
+        <div class="faq-answer">可以浏览 <a href="https://main-site-leyu.com">leyu</a> 的落地页面，那里汇集了更多关于结构、语感与视觉平衡的实践记录与说明。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <hr>
+    <div class="footer-links">
+      <span>leyu · 安静网页角落</span>
+      <span>内容叙述 · 结构优先</span>
+      <a href="https://main-site-leyu.com">leyu</a>
+      <span>2025</span>
+    </div>
+
+  </div>
+</body>
+</html>
